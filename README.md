@@ -86,8 +86,6 @@ __Loss Calculations__ - YOLO calculates a total loss function from constituent l
 
     ○	Test images along with the predictions. (Test_Images)
     
-    ○	Zip file of all of these predicted images. (Test_Images.zip)
-    
     ○	Zip file containing the annotations in .TXT format. (Annotations(.TXT Format).zip)
 
 ●	It contains all the detections of the hard hat helmet and head.
