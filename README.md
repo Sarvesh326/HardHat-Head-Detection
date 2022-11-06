@@ -38,6 +38,7 @@ __Loss Calculations__ - YOLO calculates a total loss function from constituent l
 ●	As yolo takes the annotations in .txt format, I selected equal ratios of hard_hat/head images(48 images for training and 18 for validation) from the given dataset and annotated them using LabelImg.
 
 ●	Then I trained the YOLOv5 model( which was pre-trained on coco dataset) with my dataset and runned it for various combinations of batch sizes and epochs.
+
 ●	The best results were obtained with 400 Epochs with Batch Size = 4. 
 
 ●	The mAP (mean average precision) for Head: 0.949 (94.9%).
@@ -46,11 +47,10 @@ __Loss Calculations__ - YOLO calculates a total loss function from constituent l
 
 ●	After that I did the inference on the given video and found promising detections.
 
-●	Output video is stored in Stage 1 folder named ‘Stage1_Output.mp4’.
+●	Stage 1 video link: [Stage 1 Output Video](https://drive.google.com/file/d/1mFufIUgjc3PMlS96Wo7Df3Y82WJ5d2YK/view?usp=sharing).
 
 ![hard_hat_workers182](https://user-images.githubusercontent.com/57324641/200188664-6b390640-9bde-4d37-8af2-43990e4cd3be.png)
 ![hard_hat_workers43](https://user-images.githubusercontent.com/57324641/200188715-2798d7f3-9f5c-4f34-bd0f-3fefbf19f5f1.png)
-
 
 
 
@@ -65,7 +65,11 @@ __Loss Calculations__ - YOLO calculates a total loss function from constituent l
 
 ●	Further calculated the center coordinates, shifted the y-coordinate a little above(the pixel will direct to the helmet) and using the getpixel() function, read the RGB values of that particular pixel. Passed the ‘col’ variable in annotator.box_label().
 
+![Screenshot 2021-12-28 133903](https://user-images.githubusercontent.com/57324641/200192007-4caf5649-28d8-44f3-99f8-c3c8dcff2f40.png)
+
 ●	Further in plots.py, in the box_label function, two methods were defined to create the box labels. Since PIL uses RGB format only, no changes have to be made there(if section). But CV2 uses BGR format so there in the else section I just reversed the color tuple variable.
+
+![Screenshot 2021-12-28 133755](https://user-images.githubusercontent.com/57324641/200192027-bcbe6570-def8-4e0e-ba74-6e99682e62f3.png)
 
 ●	With this I was able to achieve the colored bounding boxes according to the helmet color.
 
@@ -87,7 +91,5 @@ __Loss Calculations__ - YOLO calculates a total loss function from constituent l
     ○	Zip file containing the annotations in .TXT format. (Annotations(.TXT Format).zip)
 
 ●	It contains all the detections of the hard hat helmet and head.
-
-●	Stage 1 video link: [Stage 1 Output Video](https://drive.google.com/file/d/1mFufIUgjc3PMlS96Wo7Df3Y82WJ5d2YK/view?usp=sharing).
 
 ● YOLOv5 Model Link: [YOLOv5 Model](https://drive.google.com/file/d/1TdwY5X3seEkvwesFreoLVgPOxcY1V4aA/view?usp=share_link)
